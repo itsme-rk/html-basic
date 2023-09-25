@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS FIRST</title>
+  <style>
+    #scroll-text {
+      position: absolute;
+      top: 50%;
+      left: -300px;
+      font-weight: bold;
+      color: red;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="startScroll()">Start Scrolling</button>
+  <div id="scroll-text">This text scrolls from left to right</div>
+  <script>
+    function startScroll() {
+      let scrollText = document.getElementById('scroll-text');
+      let position = -300;
+      let interval = setInterval(function () {
+        position += 5;
+        scrollText.style.left = position + 'px';
+        if (position >= window.innerWidth) {
+          position = -300;
+        }
+      }, 20);
+    }
+  </script>
+</body>
+</html>

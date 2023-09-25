@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <title>click to move</title>
+    <style>
+        #scroll-text {
+            position: absolute;
+            top: 50%;
+            left: -300px;
+            font-size: 36px;
+            font-weight: bold;
+            color: red;
+            white-space: nowrap;
+        }
+    </style>
+    <body>
+        <button onclick="startscroll()">Scrolling start madi</button>
+        <div id="scroll-text">this text moves from left to right</div>
+        <script>
+            function startscroll() {
+                let scrolltext = document.getElementById('scroll-text');
+                let position = -300;
+                let interval = setInterval(function() {
+                    position += 5;
+                    scrolltext.style.left = position + 'px';
+                    if (position >= window.innerWidth) {
+                        position = -300;
+                    }
+                }, 20);
+            }
+        </script>
+    </body>
+</html>
